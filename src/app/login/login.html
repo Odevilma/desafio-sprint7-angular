@@ -1,6 +1,67 @@
-<div class="main-login">
-  <div class="main-img">
-    <img src="/img/ranger.png" alt="" />
+<
+<section class="body">
+  <div class="imagem-ford">
+    <img src="img/ranger2.png" alt="Foto da Range da ford" />
   </div>
-  <div class="login-contener"></div>
-</div>
+
+  <div class="login">
+    <div class="logo-ford">
+      <img src="img/ford.png" alt="Logo ford" />
+    </div>
+    <div class="login-painel">
+      <div class="texto-boas-vindas">
+        <h1>Boas-vindas</h1>
+      </div>
+      <form (ngSubmit)="onLogin()">
+        <div class="form">
+          <mat-form-field appearance="outline" class="full-width-input">
+            <mat-label>Usuário</mat-label>
+            <input
+              matInput
+              type="text"
+              id="login"
+              name="username"
+              [(ngModel)]="username"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="form">
+          <mat-form-field appearance="outline" class="full-width-input">
+            <mat-label>Senha</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              id="Senha"
+              name="password"
+              [(ngModel)]="password"
+              required
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+              type="button"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div *ngIf="loginError" class="error-message">
+          Usuário ou senha inválidos.
+        </div>
+        <button class="botao-painel" type="submit">Entrar</button>
+        <div class="auto-login">
+          <label for="autoLogin">Logar automaticamente</label>
+          <input type="checkbox" id="autoLogin" name="autoLogin" />
+        </div>
+      </form>
+    </div>
+
+    <div class="copy">
+      <p>&copy; 2025 todos os direitos reservados.</p>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,22 @@
-<p>home works!</p>
+<section class="body">
+    <div class="imagem-ford">
+      <img src="img/ranger2.png" alt="Foto da Range da ford" />
+    </div>
+  
+    <div class="login">
+      <div class="logo-ford">
+        <img src="img/ford.png" alt="Logo ford" />
+      </div>
+      <div class="login-painel">
+        <div class="texto-boas-vindas">
+          <h1>Boas-vindas</h1>
+        </div>
+        <form (ngSubmit)="onLogin()">
+          <div class="form">
+            <mat-form-field appearance="outline" class="full-width-input">
+            <mat-label>Usuário</mat-label>
+            <input matInput type="text" id="login" name="username" [(ngModel)]="username" required>
+            </mat-form-field>
+          </div>
+          <div class="form">
+           <mat-form-field
